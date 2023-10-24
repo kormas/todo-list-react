@@ -1,0 +1,8 @@
+.flex {
+    margin: 0 10px;
+}
+
+.flex__container {
+    max-width: 1300px;
+    margin: 50px auto;
+}
