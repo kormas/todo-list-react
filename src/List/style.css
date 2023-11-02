@@ -14,14 +14,15 @@
     border-width: 0 0 1px;
     border-color: #dddddd;
     justify-content: space-between;
+    align-items: center;
   }
   
   .list__button {
-    flex-basis: 10%;
+    flex-basis: 5%;
   }
   
   .list__item {
-    flex-basis: 75%;
+    flex-grow: 1;
   }
   
   .list__markButton {
@@ -35,6 +36,7 @@
     color: white;
     cursor: pointer;
     transition: 0.2s;
+    border: none;
   }
   
   .list__markButton:hover {
@@ -56,6 +58,7 @@
     cursor: pointer;
     flex-shrink: 0;
     transition: 0.2s;
+    border: none;
   }
   
   .list__binButton:hover {
