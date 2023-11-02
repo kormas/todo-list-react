@@ -1,7 +1,7 @@
 # Task List
 ![task list](https://raw.githubusercontent.com/kormas/todo-list-react/main/public/task-list.gif)
 
-## demo
+## Demo
 https://kormas.github.io/todo-list-react/
 
 ## Description
