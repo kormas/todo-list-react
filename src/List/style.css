@@ -17,10 +17,6 @@
     align-items: center;
   }
   
-  .list__button {
-    flex-basis: 5%;
-  }
-  
   .list__item {
     flex-grow: 1;
   }

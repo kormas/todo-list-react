@@ -6,7 +6,7 @@ const List = ({tasks, hideCompletedTasks}) => (
             <li 
             className={`list__block ${task.done && hideCompletedTasks ? "list__block--hidden" : ""}`}
             key={task.id}>
-                <div className="list__button">
+                <div>
                         <p className="list__leftParagraph">
                             <button className="list__markButton">{task.done ? "✓" : ""}</button>
                         </p>
@@ -16,7 +16,7 @@ const List = ({tasks, hideCompletedTasks}) => (
                             {task.content}
                         </p>
                     </div>
-                    <div className="list__button">
+                    <div>
                         <p className="list__rightParagraph">
                             <button className="list__binButton"><span>🗑️</span></button>
                         </p>
