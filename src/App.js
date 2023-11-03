@@ -14,11 +14,11 @@ function App() {
 
   const toggleHideCompleted = () => {
     setHideCompleted(hideCompleted => !hideCompleted);
-  }
+  };
 
   const removeTask = (id) => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
-  }
+  };
 
   const toggleTaskDone = (id) => {
     setTasks(tasks => tasks.map(task => {
@@ -28,7 +28,13 @@ function App() {
 
       return task;
     }));
-  }
+  };
+
+  const markAllDone = () => {
+    setTasks(tasks => tasks.map(task => ({
+      ...task, done: true,
+    })));
+  };
 
   return (
     <Container>
@@ -53,11 +59,12 @@ function App() {
             tasks={tasks}
             hideCompleted={hideCompleted}
             toggleHideCompleted={toggleHideCompleted}
+            markAllDone={markAllDone}
           />}
       />
 
     </Container>
   );
-}
+};
 
 export default App;
