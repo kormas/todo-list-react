@@ -16,6 +16,10 @@ function App() {
     setHideCompleted(hideCompleted => !hideCompleted);
   }
 
+  const removeTask = (id) => {
+    setTasks(tasks => tasks.filter(task => task.id !== id));
+  }
+
   return (
     <Container>
 
@@ -27,7 +31,12 @@ function App() {
 
       <Section
         title="Lista zadań"
-        body={<List tasks={tasks} hideCompleted={hideCompleted}/>}
+        body={
+          <List
+            tasks={tasks}
+            hideCompleted={hideCompleted}
+            removeTask={removeTask}
+          />}
         extraHeaderContent={
           <Buttons
             tasks={tasks}
