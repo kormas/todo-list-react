@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Form from "./Form";
 import List from "./List";
 import Buttons from "./Buttons";
@@ -9,9 +10,9 @@ let tasks = [
   { id: 2, content: "przykład nr 2", done: true },
 ];
 
-let hideCompletedTasks = false;
-
 function App() {
+  const [hideCompleted, setCompleted] = useState(false);
+
   return (
     <Container>
 
@@ -23,8 +24,8 @@ function App() {
 
         <Section 
         title="Lista zadań" 
-        body={<List tasks={tasks} hideCompletedTasks={hideCompletedTasks} />} 
-        extraHeaderContent={<Buttons tasks={tasks} hideCompletedTasks={hideCompletedTasks} />} />
+        body={<List tasks={tasks} hideCompleted={hideCompleted} />} 
+        extraHeaderContent={<Buttons tasks={tasks} hideCompleted={hideCompleted} />} />
 
     </Container>
   );

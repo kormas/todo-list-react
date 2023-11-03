@@ -1,10 +1,10 @@
 import "./style.css";
 
-const List = ({tasks, hideCompletedTasks}) => (
+const List = ({tasks, hideCompleted}) => (
     <ul className="list">
         {tasks.map(task => (
             <li 
-            className={`list__block ${task.done && hideCompletedTasks ? "list__block--hidden" : ""}`}
+            className={`list__block ${task.done && hideCompleted ? "list__block--hidden" : ""}`}
             key={task.id}>
                 <div>
                         <p className="list__leftParagraph">
