@@ -5,13 +5,12 @@ import Buttons from "./Buttons";
 import Section from "./Section";
 import Container from "./Container";
 
-let tasks = [
-  { id: 1, content: "przykład nr 1", done: false },
-  { id: 2, content: "przykład nr 2", done: true },
-];
-
 function App() {
   const [hideCompleted, setHideCompleted] = useState(false);
+  const [tasks, setTasks] = useState([
+    { id: 1, content: "przykład nr 1", done: false },
+    { id: 2, content: "przykład nr 2", done: true },
+  ]);
 
   const toggleHideCompleted = () => {
     setHideCompleted(hideCompleted => !hideCompleted);
