@@ -11,21 +11,31 @@ let tasks = [
 ];
 
 function App() {
-  const [hideCompleted, setCompleted] = useState(false);
+  const [hideCompleted, setHideCompleted] = useState(false);
+
+  const toggleHideCompleted = () => {
+    setHideCompleted(hideCompleted => !hideCompleted);
+  }
 
   return (
     <Container>
 
-        <h1>Lista Zadań</h1>
+      <h1>Lista Zadań</h1>
 
-        <Section 
-        title="Dodaj nowe zadanie" 
+      <Section
+        title="Dodaj nowe zadanie"
         body={<Form />} />
 
-        <Section 
-        title="Lista zadań" 
-        body={<List tasks={tasks} hideCompleted={hideCompleted} />} 
-        extraHeaderContent={<Buttons tasks={tasks} hideCompleted={hideCompleted} />} />
+      <Section
+        title="Lista zadań"
+        body={<List tasks={tasks} hideCompleted={hideCompleted}/>}
+        extraHeaderContent={
+          <Buttons
+            tasks={tasks}
+            hideCompleted={hideCompleted}
+            toggleHideCompleted={toggleHideCompleted}
+          />}
+      />
 
     </Container>
   );
