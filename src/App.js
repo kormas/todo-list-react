@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import React, { useEffect } from 'react';
 import Form from "./Form";
 import List from "./List";
 import Buttons from "./Buttons";
@@ -7,10 +8,10 @@ import Container from "./Container";
 
 function App() {
   const [hideCompleted, setHideCompleted] = useState(false);
-  const [tasks, setTasks] = useState([
-    { id: 1, content: "przykład nr 1", done: false },
-    { id: 2, content: "przykład nr 2", done: true },
-  ]);
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("localList");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+});
 
   const toggleHideCompleted = () => {
     setHideCompleted(hideCompleted => !hideCompleted);
@@ -25,7 +26,6 @@ function App() {
       if (task.id === id) {
         return { ...task, done: !task.done };
       }
-
       return task;
     }));
   };
@@ -46,6 +46,13 @@ function App() {
       },
     ]);
   };
+
+  useEffect(() => {
+    localStorage.setItem("localList", JSON.stringify(tasks));
+  }, [tasks]);
+
+  // localStorage.setItem("localList", JSON.stringify(tasks));
+  // JSON.parse(localStorage.getItem("localList"));
 
   return (
     <Container>
