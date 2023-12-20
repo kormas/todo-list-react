@@ -51,9 +51,6 @@ function App() {
     localStorage.setItem("localList", JSON.stringify(tasks));
   }, [tasks]);
 
-  // localStorage.setItem("localList", JSON.stringify(tasks));
-  // JSON.parse(localStorage.getItem("localList"));
-
   return (
     <Container>
 
