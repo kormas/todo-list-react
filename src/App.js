@@ -10,7 +10,7 @@ function App() {
   const [hideCompleted, setHideCompleted] = useState(false);
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem("localList");
-    return savedTasks ? JSON.parse(savedTasks) : [];
+    return savedTasks ? JSON.parse(savedTasks) : [{id: 1, content: "przykład", done: false}];
 });
 
   const toggleHideCompleted = () => {
