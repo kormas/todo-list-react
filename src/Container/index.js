@@ -1,9 +1,9 @@
-import "./style.css";
+import {Main} from "./styled.js";
 
 const Container = ({ children }) => (
-    <main className="flex__container">
+    <Main>
         {children}
-    </main>
+    </Main>
 );
 
 export default Container;
