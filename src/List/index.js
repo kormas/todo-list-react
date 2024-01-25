@@ -1,35 +1,36 @@
-import "./style.css";
+import { StyledList, TaskBlock, TaskItem, TaskMark, TaskContent, TaskBin, MarkButton, BinButton } from "./styled";
 
 const List = ({ tasks, hideCompleted, removeTask, toggleTaskDone }) => (
-    <ul className="list">
+    <StyledList>
         {tasks.map(task => (
-            <li
-                className={`list__block ${task.done && hideCompleted ? "list__block--hidden" : ""}`}
-                key={task.id}>
-                <div>
-                    <p className="list__leftParagraph">
-                        <button
-                            onClick={() => toggleTaskDone(task.id)}
-                            className="list__markButton">{task.done ? "✓" : ""}
-                        </button>
-                    </p>
-                </div>
-                <div className="list__item">
-                    <p className={`list__content ${task.done ? "list__content--done" : ""}`}>
+            <TaskBlock
+                key={task.id}
+                hidden={task.done && hideCompleted}
+            >
+                <TaskMark>
+                    <MarkButton
+                        onClick={() => toggleTaskDone(task.id)}
+                    >
+                        {task.done ? "✓" : ""}
+                    </MarkButton>
+                </TaskMark>
+                <TaskItem>
+                    <TaskContent
+                        done={task.done}
+                    >
                         {task.content}
-                    </p>
-                </div>
-                <div>
-                    <p className="list__rightParagraph">
-                        <button
-                            onClick={() => removeTask(task.id)}
-                            className="list__binButton"><span>🗑️</span>
-                        </button>
-                    </p>
-                </div>
-            </li>
+                    </TaskContent>
+                </TaskItem>
+                <TaskBin>
+                    <BinButton
+                        onClick={() => removeTask(task.id)}
+                    >
+                        🗑️
+                    </BinButton>
+                </TaskBin>
+            </TaskBlock>
         ))}
-    </ul>
+    </StyledList>
 );
 
 

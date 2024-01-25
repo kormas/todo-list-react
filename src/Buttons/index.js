@@ -8,12 +8,14 @@ const Buttons = ({ tasks, hideCompleted, toggleHideCompleted, markAllDone }) => 
     return (
         <ButtonsContainer>
             <Button
-                onClick={toggleHideCompleted}>
+                onClick={toggleHideCompleted}
+            >
                 {hideCompleted ? "Pokaż ukończone" : "Ukryj ukończone"}
             </Button>
             <Button
                 onClick={markAllDone}
-                disabled={tasks.every(({ done }) => done)}>
+                disabled={tasks.every(({ done }) => done)}
+            >
                 Ukończ wszystkie
             </Button>
         </ButtonsContainer>
