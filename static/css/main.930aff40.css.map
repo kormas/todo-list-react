@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.930aff40.css","mappings":"AAAA,KACE,qBACF,CAEA,iBACE,kBACF,CAEA,KACE,qBAAyB,CACzB,gCACF","sources":["index.css"],"sourcesContent":["html {\n  box-sizing: border-box;\n}\n\n*, ::after, ::before {\n  box-sizing: inherit;\n}\n\nbody {\n  background-color: #dddddd;\n  font-family: 'Open Sans', sans-serif;\n}\n"],"names":[],"sourceRoot":""}
