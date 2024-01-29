@@ -72,7 +72,7 @@ function App() {
             removeTask={removeTask}
             toggleTaskDone={toggleTaskDone}
           />}
-        extraHeaderContent={
+          extraHeaderContent={
           <Buttons
             tasks={tasks}
             hideCompleted={hideCompleted}

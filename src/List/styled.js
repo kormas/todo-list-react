@@ -11,7 +11,7 @@ export const TaskBlock = styled.li`
     flex-wrap: nowrap;
     width: 100%;
     background-color: #ffffff;
-    padding: 0px 20px;
+    padding: 10px 20px;
     border-style: solid;
     border-width: 0 0 1px;
     border-color: #dddddd;

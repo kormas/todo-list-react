@@ -1,4 +1,4 @@
-import { ButtonsContainer, Button } from "./styled.js";
+import { ButtonsContainer, Button } from "./styled";
 
 const Buttons = ({ tasks, hideCompleted, toggleHideCompleted, markAllDone }) => {
     if (tasks.length === 0) {
