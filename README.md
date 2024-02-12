@@ -17,6 +17,7 @@ The task list provided here allows you to:
 - Flexbox
 - JavaScript
 - React
+- Styled Components
 
 ## Getting Started with Create React App
 
